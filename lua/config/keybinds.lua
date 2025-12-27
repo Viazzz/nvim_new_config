@@ -1,5 +1,8 @@
 -- KEYBINDS
 vim.g.mapleader = " "
+
+vim.keymap.set('n', '<leader>q', '<cmd>lua require("dbt.dbt-nvim").show()<CR>')
+
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Alt Up/Down in vscode
