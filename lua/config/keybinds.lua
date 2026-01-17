@@ -69,7 +69,7 @@ vim.keymap.set("n", "<leader>ex", ":w <bar> exec '!python3 ' . shellescape('%')<
 
 
 vim.keymap.set("n", "<leader>cf", function()
-    require("conform").format()
+    require("conform").format{async = true, lsp_fallback = true}
 end, { desc = "Current file was formated" })
 
 -- nvim-tree

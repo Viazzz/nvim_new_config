@@ -50,6 +50,7 @@ return {
                     "gitignore",
                     "astro",
                     "sql",
+                    "htmldjango",
                 },
                 -- auto install above language parsers
                 auto_install = false,

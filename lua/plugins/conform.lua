@@ -1,14 +1,16 @@
 return {
-    "stevearc/conform.nvim",
+    'stevearc/conform.nvim',
     opts = {
         formatters_by_ft = {
+            python = { 'black', 'isort' },
             lua = { "stylua" },
-            python = { "black", "isort" },
-            javascript = { "prettier" },
-            typescript = { "prettier" },
-            markdown = { "prettier" },
-            sql = { "sqlfmt" },
-            json = { "black" },
+            javascript = { 'prettier' },
+            typescript = { 'prettier' },
+            markdown = { 'prettier' },
+            sql = { 'sqlfmt' },
+            json = { 'black' },
+            html = { 'prettier' },
+            htmldjango = { 'prettier' },
         },
     },
 }

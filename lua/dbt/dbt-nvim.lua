@@ -10,7 +10,7 @@ local config = {
 
 function M.setup(user_config)
 	config = vim.tbl_deep_extend("force", config, user_config or {})
-	config.dbt_cmd = "source " .. config.venv_path .. "/bin/activate && dbt"
+	-- config.dbt_cmd = "source " .. config.venv_path .. "/bin/activate && dbt"
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = "markdown",
 		callback = function()
@@ -84,7 +84,7 @@ local function get_current_buffer_query_results()
 	local file_sql = table.concat(lines, "\n")
 	local compiled_sql = compile_sql(file_sql)
 	if compiled_sql then
-		compiled_sql = compiled_sql .. " limit " .. config.limit
+		compiled_sql = compiled_sql .. " order by (select null) offset 0 rows fetch first " .. config.limit .. "rows only "
 		local query_results = run_operation(compiled_sql)
 		if query_results then
 			return query_results
@@ -171,6 +171,7 @@ function M.show()
 	else
 		vim.notify("No results to display.", vim.log.levels.WARN)
 	end
+    vim.opt.wrap = false
 end
 
 return M
