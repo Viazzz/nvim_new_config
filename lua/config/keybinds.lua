@@ -65,11 +65,12 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- execute python file
 vim.keymap.set("n", "<leader>ex", ":w <bar> exec '!python3 ' . shellescape('%')<CR>", { desc = "Run Python file" })
 
-
+-- format current file
 vim.keymap.set("n", "<leader>cf", function()
-    require("conform").format{async = true, lsp_fallback = true}
+    require("conform").format { async = true, lsp_fallback = true }
 end, { desc = "Current file was formated" })
 
 -- nvim-tree
