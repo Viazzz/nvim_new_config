@@ -1,7 +1,12 @@
 -- KEYBINDS
 vim.g.mapleader = " "
 
+vim.keymap.set("i", "<C-t>", "{%  %}<Left><Left><Left>")
+vim.keymap.set("i", "<C-n>", "{{  }}<Left><Left><Left>")
+
+
 vim.keymap.set('n', '<leader>q', '<cmd>lua require("dbt.dbt-nvim").show()<CR>')
+vim.keymap.set('n', '<leader>qf', '/│<CR>')
 
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 
@@ -74,4 +79,4 @@ vim.keymap.set("n", "<leader>cf", function()
 end, { desc = "Current file was formated" })
 
 -- nvim-tree
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>e', ':Neotree toggle<CR>', { noremap = true, silent = true })

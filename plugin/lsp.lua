@@ -298,13 +298,13 @@ vim.lsp.config['djlsp'] = {
 vim.lsp.enable 'djlsp'
 
 
-vim.lsp.config['jinja_lsp'] = {
-    name = 'jinja_lsp',
-    cmd = { 'jinja-lsp' },
-    filetypes = { 'jinja', 'htmldjango', 'python', 'rust', 'html', },
-    root_markers = { '.git' },
-}
-vim.lsp.enable 'jinja_lsp'
+-- vim.lsp.config['jinja_lsp'] = {
+--     name = 'jinja_lsp',
+--     cmd = { 'jinja-lsp' },
+--     filetypes = { 'jinja', 'htmldjango', 'python', 'rust', 'html', },
+--     root_markers = { '.git' },
+-- }
+-- vim.lsp.enable 'jinja_lsp'
 
 vim.lsp.config['emmet-language-server'] = {
     cmd = { 'emmet-language-server', '--stdio' },
