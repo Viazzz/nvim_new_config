@@ -170,36 +170,38 @@ function M.show()
 
     local results = get_current_buffer_query_results()
     if results then
-        local fff = "/home/viaz/.local/state/nvim/dbee/notes/global/dbt_note.sql"
-        local dbt_note_file = require("dbee").api.ui.editor_search_note_with_file(fff)
-        local note_id = ""
-        local note_file_path = ""
-        for key, value in pairs(dbt_note_file) do
-            if key == "id" then
-                note_id = value
-            end
-            if key == "file" then
-                note_file_path = value
-            end
-            -- print("Key:", key, "Value:", value)
-        end
+        -- local fff = "/home/viaz/.local/state/nvim/dbee/notes/global/dbt_note.sql"
+        local dbt_sql = "/home/viaz/.local/share/nvim/sql/dbt.sql"
+        -- local dbt_note_file = require("dbee").api.ui.editor_search_note_with_file(fff)
+        -- local note_id = ""
+        -- local note_file_path = ""
+        -- for key, value in pairs(dbt_note_file) do
+        --     if key == "id" then
+        --         note_id = value
+        --     end
+        --     if key == "file" then
+        --         note_file_path = value
+        --     end
+        --     -- print("Key:", key, "Value:", value)
+        -- end
         -- print(note_id)
 
         local content = {}
         table.insert(content, results)
 
-        local file = io.open(note_file_path, "w")
+        local file = io.open(dbt_sql, "w")
         if file then
             for _, line in ipairs(content) do
                 file:write(line .. "\n")
             end
             file:close()
+            vim.cmd("e" .. " " .. dbt_sql)
         else
             vim.notify("Failed to create temporary file for output.", vim.log.levels.ERROR)
         end
 
-        require("dbee").open()
-        require("dbee").api.ui.editor_set_current_note(note_id)
+        -- require("dbee").open()
+        -- require("dbee").api.ui.editor_set_current_note(note_id)
     else
         vim.notify("No results to display.", vim.log.levels.WARN)
     end

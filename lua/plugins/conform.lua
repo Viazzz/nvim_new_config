@@ -10,7 +10,7 @@ return {
             sql = { 'sqlfmt' },
             json = { 'black' },
             html = { 'prettier' },
-            htmldjango = { 'prettier' },
+            htmldjango = { 'djlint' },
         },
     },
 }
