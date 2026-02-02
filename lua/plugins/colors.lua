@@ -5,23 +5,25 @@ local function enable_transparency()
 end
 
 return {
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    --     config = function()
+    --         vim.cmd.colorscheme "tokyonight-night"
+    --         -- vim.cmd('hi Directory guibg=NONE')
+    --         -- vim.cmd('hi SignColumn guibg=NONE')
+    --         enable_transparency()
+    --     end
+    -- }
     {
         "catppuccin/nvim",
         config = function()
-            vim.cmd.colorscheme "catppuccin-frappe"
+            vim.cmd.colorscheme "catppuccin-mocha"
             -- vim.cmd('hi Directory guibg=NONE')
             -- vim.cmd('hi SignColumn guibg=NONE')
             enable_transparency()
         end
     },
-    -- {
-    --     "Mofiqul/vscode.nvim",
-    --     name = 'vscode',
-    --     config = function()
-    --         vim.cmd.colorscheme "vscode"
-    --         vim.cmd('hi Directory guibg=NONE')
-    --         vim.cmd('hi SignColumn guibg=NONE')
-    --         enable_transparency()
-    --     end
-    -- }
 }
