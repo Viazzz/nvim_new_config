@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "<C-t>", "{%  %}<Left><Left><Left>")
-vim.keymap.set("i", "<C-n>", "{{  }}<Left><Left><Left>")
+-- vim.keymap.set("i", "<C-n>", "{{  }}<Left><Left><Left>")
 
 
 vim.keymap.set('n', '<leader>cq', '<cmd>lua require("dbt.dbt-nvim").show()<CR>')
