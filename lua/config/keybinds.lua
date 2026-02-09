@@ -9,6 +9,7 @@ vim.keymap.set('n', '<leader>cq', '<cmd>lua require("dbt.dbt-nvim").show()<CR>')
 -- vim.keymap.set('n', '<leader>q', 'vip<Plug>(sqls-execute-query)')
 -- vim.keymap.set('v', '<leader>q', '<Plug>(sqls-execute-query)')
 vim.keymap.set('v', '<leader>q', '<cmd>SqlsExecuteQuery<CR>')
+vim.keymap.set('n', '<leader>sc', '<cmd>SqlsSwitchConnection<CR>')
 vim.keymap.set('n', '<leader>qf', '/│<CR>')
 
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
