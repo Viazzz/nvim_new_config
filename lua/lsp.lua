@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- 5) Define the Lua language server config (no mason/lspconfig)
 -- See :help lsp-new-config and :help vim.lsp.config()
-local caps = require('cmp_nvim_lsp').default_capabilities()
+-- local caps = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.config('sqls', {
     cmd = { 'sqls', '--config', '/home/viaz/.config/sql/config.yml' },
 })
