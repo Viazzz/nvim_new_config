@@ -93,6 +93,9 @@ vim.lsp.enable({
     "pyright",
     "cssls",
     "sqls",
+    "vue_ls",
+    "ts_ls",
+    "vtsls",
 })
 
 vim.diagnostic.config({ virtual_text = true })
