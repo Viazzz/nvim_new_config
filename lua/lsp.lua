@@ -96,6 +96,7 @@ vim.lsp.enable({
     "vue_ls",
     "ts_ls",
     "vtsls",
+    "tailwindcss",
 })
 
 vim.diagnostic.config({ virtual_text = true })

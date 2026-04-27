@@ -2,6 +2,9 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "<C-t>", "{%  %}<Left><Left><Left>")
+-- vim.api.nvim_set_keymap('n', '<leader>ft', [[:Flterm<CR>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>FloatermToggle<CR>', { noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-n>", "{{  }}<Left><Left><Left>")
 
 

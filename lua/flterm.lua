@@ -1,5 +1,4 @@
 -- Remap leaving 'terminal mode' to double tap esc
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 local state = {
     floating = {
@@ -52,4 +51,4 @@ local toggle_terminal = function()
 end
 
 vim.api.nvim_create_user_command("Flterm", toggle_terminal, {})
-vim.api.nvim_set_keymap('n', '<leader>ft', [[:Flterm<CR>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>ft', [[:Flterm<CR>]], { noremap = true, silent = true })
