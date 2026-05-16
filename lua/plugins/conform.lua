@@ -10,6 +10,7 @@ return {
             sql = { 'sqlfmt' },
             json = { 'black' },
             html = { 'prettier' },
+            vue = { 'prettier' },
             htmldjango = { 'djlint' },
         },
     },

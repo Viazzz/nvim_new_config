@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('n', '<F4>', vim.lsp.buf.code_action)
 
         -- Put near your LSP on_attach
-        local excluded_filetypes = { php = true, sql = true }
+        local excluded_filetypes = { php = true, sql = true, vue = true }
 
         -- Auto-format on save (only if server can't do WillSaveWaitUntil)
         if
