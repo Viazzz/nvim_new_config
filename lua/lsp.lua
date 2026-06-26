@@ -85,18 +85,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.lsp.config('sqls', {
     cmd = { 'sqls', '--config', '/home/viaz/.config/sql/config.yml' },
 })
-vim.lsp.enable({
-    "lua_ls",
-    "django-template-lsp",
-    "djlsp",
-    "emmet-language-server",
-    "pyright",
-    "cssls",
-    "sqls",
-    "vue_ls",
-    "ts_ls",
-    "vtsls",
-    "tailwindcss",
-})
+vim.lsp.enable {
+    'lua_ls',
+    'django-template-lsp',
+    'djlsp',
+    'emmet-language-server',
+    'pyright',
+    'cssls',
+    'sqls',
+    'vue_ls',
+    'ts_ls',
+    'vtsls',
+    'tailwindcss',
+}
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config { virtual_text = true }
