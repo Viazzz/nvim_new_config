@@ -93,6 +93,8 @@ vim.lsp.config('vue_ls', {
         },
     },
 })
+
+
 vim.lsp.config('ts_ls', {
     init_options = {
         hostInfo = 'neovim',
@@ -115,18 +117,18 @@ vim.lsp.config('ts_ls', {
     },
 })
 
-vim.lsp.enable({
-    "lua_ls",
-    "django-template-lsp",
-    "djlsp",
-    "emmet-language-server",
-    "pyright",
-    "cssls",
-    "sqls",
-    "vue_ls",
-    "ts_ls",
-    "vtsls",
-    "tailwindcss",
-})
+vim.lsp.enable {
+    'lua_ls',
+    'django-template-lsp',
+    'djlsp',
+    'emmet-language-server',
+    'pyright',
+    'cssls',
+    'sqls',
+    'vue_ls',
+    'ts_ls',
+    'vtsls',
+    'tailwindcss',
+}
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config { virtual_text = true }
