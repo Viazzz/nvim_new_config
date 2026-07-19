@@ -22,6 +22,7 @@ return {
                 "javascript",
                 "html",
                 "sql",
+                "vue",
 
             },
             incremental_selection = {
@@ -33,7 +34,7 @@ return {
             },
         }
         vim.api.nvim_create_autocmd('FileType', {
-            pattern = { 'python', 'rust', 'javascript', 'zig' },
+            pattern = { 'python', 'rust', 'javascript', 'zig', 'vue', 'html' },
             callback = function()
                 -- syntax highlighting, provided by Neovim
                 vim.treesitter.start()

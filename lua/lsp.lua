@@ -85,6 +85,38 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.lsp.config('sqls', {
     cmd = { 'sqls', '--config', '/home/viaz/.config/sql/config.yml' },
 })
+vim.lsp.config('vue_ls', {
+    init_options = {
+        vue = {
+            -- Enables hybrid mode so ts_ls and vue_ls cooperate
+            hybridMode = true,
+        },
+    },
+})
+
+
+vim.lsp.config('ts_ls', {
+    init_options = {
+        hostInfo = 'neovim',
+        plugins = {
+            {
+                name = '@vue/typescript-plugin',
+                -- Path to your global npm plugin installation on Linux
+                location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'javascript', 'typescript', 'vue' },
+            },
+        },
+    },
+    -- Force ts_ls to evaluate Vue files alongside standard JS/TS files
+    filetypes = {
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'vue',
+    },
+})
+
 vim.lsp.enable {
     'lua_ls',
     'django-template-lsp',

@@ -75,7 +75,17 @@
 
 ---@type vim.lsp.Config
 return {
-    init_options = { hostInfo = 'neovim' },
+    init_options = {
+        hostInfo = 'neovim'
+        ,
+        plugins = {
+            {
+                name = '@vue/typescript-plugin',
+                location = '/usr/local/lib/node_modules/@vue/language-server',
+                languages = { 'vue' },
+            },
+        },
+    },
     cmd = function(dispatchers, config)
         local cmd = 'typescript-language-server'
         if (config or {}).root_dir then
@@ -93,6 +103,7 @@ return {
         'typescriptreact',
         'vue',
     },
+    single_file_support = true,
     root_dir = function(bufnr, on_dir)
         -- The project root is where the LSP can be started from
         -- As stated in the documentation above, this LSP supports monorepos and simple projects.
