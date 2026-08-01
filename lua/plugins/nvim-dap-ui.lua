@@ -112,6 +112,8 @@ return {
                     require("dap").set_breakpoint(nil, nil, nil); require("dap").run_to_cursor()
                 end, { desc = "Jump to line under cursor" })
             vim.keymap.set("n", "<leader>dr", function() require("dap").restart() end, { desc = "Restart Debug Session" })
+            vim.keymap.set({ "n", "v" }, "<leader>de", function() require("dapui").eval() end,
+                { desc = "DAP UI: Eval floating window" })
         end,
     },
 }
