@@ -93,6 +93,37 @@ return {
                         return vim.split(argument_string, " +")
                     end,
                 },
+                {
+                    type = 'python',
+                    request = 'launch',
+                    name = "🚀 Run Custom CLI Command (airflow, pytest, etc.)",
+                    program = function()
+                        local raw_command = vim.fn.input('Enter full CLI command: ')
+                        if raw_command == "" then return nil end
+
+                        local tokens = vim.split(raw_command, " +")
+                        local cmd = tokens[1]
+
+                        local cmd_path = vim.fn.exepath(cmd)
+                        if cmd_path == "" then
+                            vim.notify("Command not found in PATH: " .. cmd, vim.log.levels.ERROR)
+                            return nil
+                        end
+
+                        table.remove(tokens, 1)
+                        _G._dap_dynamic_args = tokens
+
+                        return cmd_path
+                    end,
+                    args = function()
+                        local args = _G._dap_dynamic_args or {}
+                        _G._dap_dynamic_args = nil -- Очищаем за собой переменную
+                        return args
+                    end,
+                    pythonPath = get_python_path,
+                    env_file = vim.fn.getcwd() .. "/.env",
+                    console = "integratedTerminal",
+                },
             }
 
             dapui.setup()
