@@ -23,6 +23,7 @@ return {
                 "html",
                 "sql",
                 "vue",
+                "json",
 
             },
             incremental_selection = {
