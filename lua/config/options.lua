@@ -1,5 +1,6 @@
 -- OPTIONS
 local set = vim.opt
+vim.opt.termguicolors = true
 
 vim.g.netrw_liststyle = 3
 

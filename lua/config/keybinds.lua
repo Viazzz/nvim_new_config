@@ -13,8 +13,8 @@ vim.keymap.set("n", "<leader>df", ":lua require('neogen').generate()<CR>", { sil
 
 vim.keymap.set("i", "<C-t>", "{%  %}<Left><Left><Left>")
 -- vim.api.nvim_set_keymap('n', '<leader>ft', [[:Flterm<CR>]], { noremap = true, silent = true })
--- vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
-vim.keymap.set("t", "<C-c><C-c>", "<c-\\><c-n>")
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+-- vim.keymap.set("t", "<C-c><C-c>", "<c-\\><c-n>")
 vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>FloatermToggle<CR>', { noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-n>", "{{  }}<Left><Left><Left>")
 
